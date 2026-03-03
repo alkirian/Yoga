@@ -16,7 +16,7 @@
   --color-header-bg: #f4f0ea; /* Beige cálido elegante / Sand */
 
   --color-bg: #ffffff;
-  --color-bg-alt: #f9f7f4;
+  --color-bg-alt: #f2f5f3; /* Verde salvia ultra suave orgánico */
   --color-bg-card: #ffffff;
 
   --color-text: #2d3748;
@@ -114,6 +114,11 @@ ol {
 
 .section {
   padding: var(--space-4xl) 0;
+}
+
+/* Background util para secciones orgánicas */
+.bg-alt {
+  background-color: var(--color-bg-alt);
 }
 
 .section-header {
