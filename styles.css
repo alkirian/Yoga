@@ -181,6 +181,9 @@ ol {
 .cta-section .btn-primary {
   background: var(--color-accent-cta);
   color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(209, 96, 61, 0.25); /* Sombra sutil color terracota */
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-primary:hover {
@@ -192,6 +195,8 @@ ol {
 .course-card .btn-primary:hover,
 .cta-section .btn-primary:hover {
   background: var(--color-text); /* O un derivado oscuro de color-accent-cta */
+  box-shadow: 0 6px 20px rgba(45, 55, 72, 0.3);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -216,8 +221,8 @@ ol {
 }
 
 .btn-sm {
-  font-size: 0.875rem;
-  padding: 0.5rem 1rem;
+  font-size: 0.9375rem; /* Un pelín más grande para presencia */
+  padding: 0.6rem 1.25rem;
 }
 
 .btn-lg {
@@ -901,10 +906,16 @@ ol {
     background: var(--color-bg);
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: var(--space-2xl);
+    padding: var(--space-2xl) var(--space-xl) var(--space-xl);
     gap: var(--space-lg);
     transform: translateX(100%);
     transition: transform var(--transition-base);
+  }
+
+  /* Make header button full width on mobile */
+  .nav-menu .btn {
+    width: 100%;
+    margin-top: var(--space-md);
   }
 
   .nav-menu.active {
@@ -920,6 +931,15 @@ ol {
     padding: 120px 0 var(--space-3xl);
   }
 
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  /* Reduce space between Hero and Trust badges on mobile */
+  .hero-image-wrapper {
+    margin-bottom: var(--space-xl);
+  }
+
   .hero-stats {
     flex-wrap: wrap;
     gap: var(--space-lg);
@@ -931,6 +951,29 @@ ol {
 
   .courses-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Stack trust indicators on mobile */
+  .trust-flex {
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .trust-item {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Expand all course buttons to full width for better touch targets */
+  .course-footer .btn-primary {
+    width: 100%;
+    margin-top: var(--space-md);
+  }
+
+  .course-footer {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .footer-grid {
