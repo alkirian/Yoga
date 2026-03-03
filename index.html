@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academia Online de Yoga | Transforma tu práctica desde casa</title>
+    <meta
+      name="description"
+      content="Descubre cursos de yoga online con instructores certificados. Clases grabadas, programas completos y comunidad de apoyo."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header / Navigation -->
+    <header class="header">
+      <nav class="nav container">
+        <a href="index.html" class="logo">
+          <svg
+            class="logo-icon"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 4C24 4 12 12 12 24C12 30.627 17.373 36 24 36C30.627 36 36 30.627 36 24C36 12 24 4 24 4Z"
+              fill="currentColor"
+              opacity="0.2"
+            />
+            <path
+              d="M24 12C24 12 18 18 18 24C18 27.314 20.686 30 24 30C27.314 30 30 27.314 30 24C30 18 24 12 24 12Z"
+              fill="currentColor"
+            />
+            <circle cx="24" cy="24" r="3" fill="white" />
+          </svg>
+          <span class="logo-text">Academia Online de Yoga</span>
+        </a>
+        <button class="nav-toggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="cursos.html" class="nav-link">Cursos</a></li>
+          <li><a href="planes.html" class="nav-link">Planes</a></li>
+          <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+          <li><a href="#" class="nav-link btn btn-outline">Acceder</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Encuentra tu Equilibrio Interior.<br /><span class="accent"
+              >Practica Yoga Online.</span
+            >
+          </h1>
+          <p class="hero-subtitle">
+            Únete a nuestra comunidad y transforma tu bienestar desde casa con
+            clases guiadas por instructores certificados.
+          </p>
+          <div class="hero-cta">
+            <a href="cursos.html" class="btn btn-primary btn-lg">Ver Cursos</a>
+            <a href="#como-funciona" class="btn btn-ghost">¿Cómo funciona?</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Alumnos activos</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Clases grabadas</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">4.9</span>
+              <span class="stat-label">Valoración</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=800&fit=crop"
+              alt="Mujer practicando yoga en posición de meditación"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-indicators fade-in-up">
+      <div class="container">
+        <div class="trust-flex">
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>Pago 100% Seguro</span>
+          </div>
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>Clases de por Vida</span>
+          </div>
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+            <span>Garantía de 7 Días</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="section courses-preview">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Cursos Destacados</span>
+          <h2 class="section-title">Empieza Tu Transformación</h2>
+          <p class="section-subtitle">
+            Programas diseñados para todos los niveles, desde principiantes
+            hasta practicantes avanzados.
+          </p>
+        </div>
+        <div class="courses-grid">
+          <!-- Course Card 1 -->
+          <article class="course-card fade-in-up">
+            <div class="course-image">
+              <img
+                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=250&fit=crop"
+                alt="Introducción al Yoga"
+                loading="lazy"
+              />
+              <span class="course-badge">Principiante</span>
+            </div>
+            <div class="course-content">
+              <h3 class="course-title">Introducción al Yoga: Fundamentos</h3>
+              <p class="course-description">
+                Aprende las posturas básicas, la respiración y la meditación.
+                Perfecto para empezar tu práctica.
+              </p>
+              <div class="course-meta">
+                <span class="course-duration">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                  4 semanas
+                </span>
+                <span class="course-lessons">12 clases</span>
+              </div>
+              <div class="course-footer">
+                <div class="price-container">
+                  <span class="course-price">$49 USD</span>
+                  <span class="course-microcopy">Acceso de por vida</span>
+                </div>
+                <a href="curso.html" class="btn btn-primary btn-sm">Ver Detalles</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Course Card 2 -->
+          <article class="course-card fade-in-up delay-1">
+            <div class="course-image">
+              <img
+                src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=400&h=250&fit=crop"
+                alt="Vinyasa Flow"
+                loading="lazy"
+              />
+              <span class="course-badge badge-intermediate">Intermedio</span>
+            </div>
+            <div class="course-content">
+              <h3 class="course-title">Vinyasa Flow: Energía y Movimiento</h3>
+              <p class="course-description">
+                Clases dinámicas para fortalecer el cuerpo y calmar la mente con
+                secuencias fluidas.
+              </p>
+              <div class="course-meta">
+                <span class="course-duration">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                  6 semanas
+                </span>
+                <span class="course-lessons">18 clases</span>
+              </div>
+              <div class="course-footer">
+                <div class="price-container">
+                  <span class="course-price">$69 USD</span>
+                  <span class="course-microcopy">Acceso de por vida</span>
+                </div>
+                <a href="curso.html" class="btn btn-primary btn-sm">Ver Detalles</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Course Card 3 -->
+          <article class="course-card fade-in-up delay-2">
+            <div class="course-image">
+              <img
+                src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=400&h=250&fit=crop"
+                alt="Yoga Restaurativo"
+                loading="lazy"
+              />
+              <span class="course-badge">Todos los niveles</span>
+            </div>
+            <div class="course-content">
+              <h3 class="course-title">
+                Yoga Restaurativo: Relajación Profunda
+              </h3>
+              <p class="course-description">
+                Alivia el estrés y restaura tu energía con prácticas suaves y
+                meditaciones guiadas.
+              </p>
+              <div class="course-meta">
+                <span class="course-duration">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                  4 semanas
+                </span>
+                <span class="course-lessons">10 clases</span>
+              </div>
+              <div class="course-footer">
+                <div class="price-container">
+                  <span class="course-price">$39 USD</span>
+                  <span class="course-microcopy">Acceso de por vida</span>
+                </div>
+                <a href="curso.html" class="btn btn-primary btn-sm">Ver Detalles</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="section-cta">
+          <a href="cursos.html" class="btn btn-primary">Ver Todos los Cursos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="como-funciona" class="section how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Cómo Funciona</span>
+          <h2 class="section-title">Tu Práctica en 3 Simples Pasos</h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step fade-in-up">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Elige tu curso</h3>
+            <p class="step-description">
+              Explora nuestro catálogo y encuentra el programa perfecto para tu
+              nivel y objetivos.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Accede al contenido</h3>
+            <p class="step-description">
+              Después de tu compra, accede inmediatamente a todas las clases
+              desde cualquier dispositivo.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Practica a tu ritmo</h3>
+            <p class="step-description">
+              Sin horarios fijos. Avanza según tu tiempo y repite las clases
+              cuantas veces quieras.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Instructor -->
+    <section id="sobre-mi" class="section about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=500&h=600&fit=crop"
+            alt="Instructora de yoga"
+            loading="lazy"
+          />
+        </div>
+        <div class="about-content fade-in-up">
+          <span class="section-tag">Sobre Mí</span>
+          <h2 class="section-title">Tu Guía en Este Camino</h2>
+          <p class="about-text">
+            Soy instructora certificada con más de 10 años de experiencia en
+            Hatha, Vinyasa y Yoga Restaurativo. Mi misión es hacer el yoga
+            accesible para todos, sin importar tu nivel o condición física.
+          </p>
+          <p class="about-text">
+            Cada clase está diseñada con amor y atención al detalle, para que
+            puedas experimentar los beneficios del yoga desde la comodidad de tu
+            hogar.
+          </p>
+          <ul class="about-credentials">
+            <li>✓ Certificación RYT-500</li>
+            <li>✓ +500 alumnos transformados</li>
+            <li>✓ Especialista en yoga terapéutico</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Testimonios</span>
+          <h2 class="section-title">Lo Que Dicen Nuestros Alumnos</h2>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card fade-in-up">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Las clases son increíbles. La forma de explicar cada postura me
+              hizo sentir segura desde el primer día. ¡Totalmente recomendado!"
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop"
+                alt="María G."
+                class="testimonial-avatar"
+              />
+              <div>
+                <span class="testimonial-name">María G.</span>
+                <span class="testimonial-course">Curso Fundamentos</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card fade-in-up delay-1">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Nunca pensé que podría practicar yoga en casa, pero estas clases
+              cambiaron todo. La calidad del contenido es excelente."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop"
+                alt="Carlos R."
+                class="testimonial-avatar"
+              />
+              <div>
+                <span class="testimonial-name">Carlos R.</span>
+                <span class="testimonial-course">Vinyasa Flow</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card fade-in-up delay-2">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "El yoga restaurativo me ayudó a manejar mi estrés. Ahora es parte
+              esencial de mi rutina nocturna."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop"
+                alt="Laura M."
+                class="testimonial-avatar"
+              />
+              <div>
+                <span class="testimonial-name">Laura M.</span>
+                <span class="testimonial-course">Yoga Restaurativo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="cta-title">¿Lista para Empezar tu Transformación?</h2>
+          <p class="cta-subtitle">
+            Únete hoy y obtén acceso inmediato a clases que cambiarán tu vida.
+          </p>
+          <a href="planes.html" class="btn btn-primary btn-lg"
+            >Ver Planes y Precios</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <svg
+                class="logo-icon"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 4C24 4 12 12 12 24C12 30.627 17.373 36 24 36C30.627 36 36 30.627 36 24C36 12 24 4 24 4Z"
+                  fill="currentColor"
+                  opacity="0.2"
+                />
+                <path
+                  d="M24 12C24 12 18 18 18 24C18 27.314 20.686 30 24 30C27.314 30 30 27.314 30 24C30 18 24 12 24 12Z"
+                  fill="currentColor"
+                />
+                <circle cx="24" cy="24" r="3" fill="white" />
+              </svg>
+              <span class="logo-text">Academia Online de Yoga</span>
+            </a>
+            <p class="footer-tagline">
+              Transforma tu práctica, transforma tu vida.
+            </p>
+          </div>
+          <div class="footer-links">
+            <h4>Navegación</h4>
+            <ul>
+              <li><a href="cursos.html">Cursos</a></li>
+              <li><a href="planes.html">Planes</a></li>
+              <li><a href="#sobre-mi">Sobre Mí</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Términos y Condiciones</a></li>
+              <li><a href="#">Política de Privacidad</a></li>
+              <li><a href="#">Política de Reembolso</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Contacto</h4>
+            <ul>
+              <li>
+                <a href="mailto:hola@academiadeyoga.com"
+                  >hola@academiadeyoga.com</a
+                >
+              </li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">YouTube</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Academia Online de Yoga. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

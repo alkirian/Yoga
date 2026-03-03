@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos | Academia Online de Yoga</title>
+    <meta name="description" content="Explora nuestra colección de cursos de yoga online.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 48 48" fill="none"><path d="M24 4C24 4 12 12 12 24C12 30.627 17.373 36 24 36C30.627 36 36 30.627 36 24C36 12 24 4 24 4Z" fill="currentColor" opacity="0.2"/><path d="M24 12C24 12 18 18 18 24C18 27.314 20.686 30 24 30C27.314 30 30 27.314 30 24C30 18 24 12 24 12Z" fill="currentColor"/><circle cx="24" cy="24" r="3" fill="white"/></svg>
+                <span class="logo-text">Academia Online de Yoga</span>
+            </a>
+            <button class="nav-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="cursos.html" class="nav-link active">Cursos</a></li>
+                <li><a href="planes.html" class="nav-link">Planes</a></li>
+                <li><a href="index.html#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                <li><a href="#" class="nav-link btn btn-outline">Acceder</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-tag">Catálogo de Cursos</span>
+            <h1 class="page-title">Encuentra Tu Práctica Ideal</h1>
+            <p class="page-subtitle">Explora nuestra colección de cursos diseñados para acompañarte en cada etapa.</p>
+        </div>
+    </section>
+
+    <section class="section catalog-section">
+        <div class="container">
+            <div class="catalog-layout">
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <h3 class="filter-title">Nivel</h3>
+                        <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter-type="level" data-filter-value="principiante"><span class="filter-label">Principiante</span></label>
+                        <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter-type="level" data-filter-value="intermedio"><span class="filter-label">Intermedio</span></label>
+                        <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter-type="level" data-filter-value="avanzado"><span class="filter-label">Avanzado</span></label>
+                    </div>
+                    <div class="filter-group">
+                        <h3 class="filter-title">Estilo</h3>
+                        <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter-type="style" data-filter-value="hatha"><span class="filter-label">Hatha</span></label>
+                        <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter-type="style" data-filter-value="vinyasa"><span class="filter-label">Vinyasa</span></label>
+                        <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter-type="style" data-filter-value="restaurativo"><span class="filter-label">Restaurativo</span></label>
+                    </div>
+                </aside>
+
+                <div class="catalog-content">
+                    <div class="courses-grid catalog-grid">
+                        <article class="course-card" data-level="principiante" data-style="hatha">
+                            <div class="course-image"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=250&fit=crop" alt="Introducción al Yoga"><span class="course-badge">Principiante</span></div>
+                            <div class="course-content">
+                                <h3 class="course-title">Introducción al Yoga: Fundamentos</h3>
+                                <p class="course-description">Aprende las posturas básicas, la respiración y la meditación.</p>
+                                <div class="course-meta"><span class="course-duration">4 semanas</span><span class="course-lessons">12 clases</span></div>
+                                <div class="course-footer"><span class="course-price">$49 USD</span><a href="curso.html" class="btn btn-sm">Ver Curso</a></div>
+                            </div>
+                        </article>
+                        <article class="course-card" data-level="intermedio" data-style="vinyasa">
+                            <div class="course-image"><img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=400&h=250&fit=crop" alt="Vinyasa Flow"><span class="course-badge badge-intermediate">Intermedio</span></div>
+                            <div class="course-content">
+                                <h3 class="course-title">Vinyasa Flow: Energía y Movimiento</h3>
+                                <p class="course-description">Clases dinámicas para fortalecer el cuerpo y calmar la mente.</p>
+                                <div class="course-meta"><span class="course-duration">6 semanas</span><span class="course-lessons">18 clases</span></div>
+                                <div class="course-footer"><span class="course-price">$69 USD</span><a href="curso.html" class="btn btn-sm">Ver Curso</a></div>
+                            </div>
+                        </article>
+                        <article class="course-card" data-level="principiante" data-style="restaurativo">
+                            <div class="course-image"><img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=400&h=250&fit=crop" alt="Yoga Restaurativo"><span class="course-badge">Todos los niveles</span></div>
+                            <div class="course-content">
+                                <h3 class="course-title">Yoga Restaurativo: Relajación Profunda</h3>
+                                <p class="course-description">Alivia el estrés y restaura tu energía con prácticas suaves.</p>
+                                <div class="course-meta"><span class="course-duration">4 semanas</span><span class="course-lessons">10 clases</span></div>
+                                <div class="course-footer"><span class="course-price">$39 USD</span><a href="curso.html" class="btn btn-sm">Ver Curso</a></div>
+                            </div>
+                        </article>
+                        <article class="course-card" data-level="avanzado" data-style="vinyasa">
+                            <div class="course-image"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=250&fit=crop" alt="Vinyasa Avanzado"><span class="course-badge badge-advanced">Avanzado</span></div>
+                            <div class="course-content">
+                                <h3 class="course-title">Vinyasa Avanzado: Flow Intenso</h3>
+                                <p class="course-description">Secuencias desafiantes para practicantes experimentados.</p>
+                                <div class="course-meta"><span class="course-duration">8 semanas</span><span class="course-lessons">24 clases</span></div>
+                                <div class="course-footer"><span class="course-price">$99 USD</span><a href="curso.html" class="btn btn-sm">Ver Curso</a></div>
+                            </div>
+                        </article>
+                        <article class="course-card" data-level="intermedio" data-style="hatha">
+                            <div class="course-image"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=250&fit=crop" alt="Hatha Yoga"><span class="course-badge badge-intermediate">Intermedio</span></div>
+                            <div class="course-content">
+                                <h3 class="course-title">Hatha Yoga Profundo</h3>
+                                <p class="course-description">Profundiza en las posturas clásicas con alineación precisa.</p>
+                                <div class="course-meta"><span class="course-duration">6 semanas</span><span class="course-lessons">20 clases</span></div>
+                                <div class="course-footer"><span class="course-price">$79 USD</span><a href="curso.html" class="btn btn-sm">Ver Curso</a></div>
+                            </div>
+                        </article>
+                        <article class="course-card" data-level="principiante" data-style="hatha">
+                            <div class="course-image"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop" alt="Yoga para el Estrés"><span class="course-badge">Principiante</span></div>
+                            <div class="course-content">
+                                <h3 class="course-title">Yoga para Manejar el Estrés</h3>
+                                <p class="course-description">Técnicas específicas para liberar tensión y encontrar calma.</p>
+                                <div class="course-meta"><span class="course-duration">2 semanas</span><span class="course-lessons">8 clases</span></div>
+                                <div class="course-footer"><span class="course-price">$25 USD</span><a href="curso.html" class="btn btn-sm">Ver Curso</a></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section">
+        <div class="container"><div class="cta-box">
+            <h2 class="cta-title">¿No sabes por dónde empezar?</h2>
+            <p class="cta-subtitle">Explora nuestros planes y obtén acceso a múltiples cursos con descuento.</p>
+            <a href="planes.html" class="btn btn-primary btn-lg">Ver Planes</a>
+        </div></div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom"><p>&copy; 2026 Academia Online de Yoga. Todos los derechos reservados.</p></div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

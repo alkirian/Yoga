@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración | Academia Online de Yoga</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="sidebar-logo">🧘 Admin</h1>
+                <span class="sidebar-subtitle">Academia de Yoga</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                    <span class="nav-icon">📊</span> Dashboard
+                </a>
+                <a href="#cursos" class="nav-item" data-section="cursos">
+                    <span class="nav-icon">📚</span> Cursos
+                </a>
+                <a href="#planes" class="nav-item" data-section="planes">
+                    <span class="nav-icon">💳</span> Planes
+                </a>
+                <a href="#configuracion" class="nav-item" data-section="configuracion">
+                    <span class="nav-icon">⚙️</span> Configuración
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html" class="btn-view-site" target="_blank">👁️ Ver Sitio Web</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <header class="section-header">
+                    <h2>Dashboard</h2>
+                    <p>Resumen de tu academia</p>
+                </header>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-icon">📚</span>
+                        <div class="stat-info">
+                            <span class="stat-value" id="total-cursos">0</span>
+                            <span class="stat-label">Cursos</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">💳</span>
+                        <div class="stat-info">
+                            <span class="stat-value" id="total-planes">0</span>
+                            <span class="stat-label">Planes</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">🎬</span>
+                        <div class="stat-info">
+                            <span class="stat-value" id="total-clases">0</span>
+                            <span class="stat-label">Clases Totales</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="quick-actions">
+                    <h3>Acciones Rápidas</h3>
+                    <div class="actions-grid">
+                        <button class="action-btn" onclick="showSection('cursos'); openCourseModal()">
+                            <span>➕</span> Nuevo Curso
+                        </button>
+                        <button class="action-btn" onclick="showSection('planes')">
+                            <span>💰</span> Editar Precios
+                        </button>
+                        <button class="action-btn" onclick="exportData()">
+                            <span>📥</span> Exportar Datos
+                        </button>
+                        <button class="action-btn" onclick="importData()">
+                            <span>📤</span> Importar Datos
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cursos Section -->
+            <section id="cursos" class="section">
+                <header class="section-header">
+                    <div>
+                        <h2>Gestión de Cursos</h2>
+                        <p>Administra los cursos de tu academia</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCourseModal()">
+                        <span>➕</span> Nuevo Curso
+                    </button>
+                </header>
+                <div class="courses-table-container">
+                    <table class="data-table" id="courses-table">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Título</th>
+                                <th>Nivel</th>
+                                <th>Precio</th>
+                                <th>Clases</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="courses-tbody">
+                            <!-- Se llena dinámicamente -->
+                        </tbody>
+                    </table>
+                    <div class="empty-state" id="no-courses" style="display: none;">
+                        <span class="empty-icon">📚</span>
+                        <p>No hay cursos todavía</p>
+                        <button class="btn btn-primary" onclick="openCourseModal()">Crear primer curso</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Planes Section -->
+            <section id="planes" class="section">
+                <header class="section-header">
+                    <div>
+                        <h2>Planes y Precios</h2>
+                        <p>Configura los planes de tu academia</p>
+                    </div>
+                </header>
+                <div class="plans-grid" id="plans-grid">
+                    <!-- Plan Individual -->
+                    <div class="plan-card" data-plan="individual">
+                        <div class="plan-header">
+                            <h3>Curso Individual</h3>
+                            <span class="plan-badge">Básico</span>
+                        </div>
+                        <div class="plan-price-edit">
+                            <span class="currency">$</span>
+                            <input type="number" id="price-individual" value="49" class="price-input">
+                            <span class="period">USD</span>
+                        </div>
+                        <div class="plan-features">
+                            <textarea id="features-individual" class="features-textarea" rows="4">Acceso ilimitado a 1 curso
+Material descargable
+Soporte por email</textarea>
+                        </div>
+                        <div class="plan-hotmart">
+                            <label>URL de Hotmart:</label>
+                            <input type="url" id="hotmart-individual" placeholder="https://pay.hotmart.com/..." class="input-field">
+                        </div>
+                    </div>
+
+                    <!-- Pack Esencial -->
+                    <div class="plan-card featured" data-plan="pack">
+                        <div class="plan-header">
+                            <h3>Pack Esencial</h3>
+                            <span class="plan-badge">Recomendado</span>
+                        </div>
+                        <div class="plan-price-edit">
+                            <span class="currency">$</span>
+                            <input type="number" id="price-pack" value="99" class="price-input">
+                            <span class="period">USD</span>
+                        </div>
+                        <div class="plan-features">
+                            <textarea id="features-pack" class="features-textarea" rows="5">Acceso ilimitado a 3 cursos
+Material descargable
+Certificado de finalización
+Soporte prioritario por chat
+Acceso a comunidad privada</textarea>
+                        </div>
+                        <div class="plan-hotmart">
+                            <label>URL de Hotmart:</label>
+                            <input type="url" id="hotmart-pack" placeholder="https://pay.hotmart.com/..." class="input-field">
+                        </div>
+                    </div>
+
+                    <!-- Acceso Total -->
+                    <div class="plan-card" data-plan="total">
+                        <div class="plan-header">
+                            <h3>Acceso Total</h3>
+                            <span class="plan-badge">Premium</span>
+                        </div>
+                        <div class="plan-price-edit">
+                            <span class="currency">$</span>
+                            <input type="number" id="price-total" value="29" class="price-input">
+                            <span class="period">USD/mes</span>
+                        </div>
+                        <div class="plan-features">
+                            <textarea id="features-total" class="features-textarea" rows="6">Acceso a TODOS los cursos
+Nuevos cursos cada mes
+Material premium descargable
+Certificado oficial
+Soporte VIP personalizado
+Acceso exclusivo a retiros online</textarea>
+                        </div>
+                        <div class="plan-hotmart">
+                            <label>URL de Hotmart:</label>
+                            <input type="url" id="hotmart-total" placeholder="https://pay.hotmart.com/..." class="input-field">
+                        </div>
+                    </div>
+                </div>
+                <div class="plans-actions">
+                    <button class="btn btn-primary" onclick="savePlans()">💾 Guardar Cambios</button>
+                </div>
+            </section>
+
+            <!-- Configuración Section -->
+            <section id="configuracion" class="section">
+                <header class="section-header">
+                    <div>
+                        <h2>Configuración General</h2>
+                        <p>Personaliza los textos de tu sitio web</p>
+                    </div>
+                </header>
+                <div class="config-grid">
+                    <div class="config-card">
+                        <h3>🏠 Hero (Página Principal)</h3>
+                        <div class="form-group">
+                            <label>Título Principal</label>
+                            <input type="text" id="config-hero-title" class="input-field" value="Encuentra tu Equilibrio Interior. Practica Yoga Online.">
+                        </div>
+                        <div class="form-group">
+                            <label>Subtítulo</label>
+                            <textarea id="config-hero-subtitle" class="input-field" rows="2">Únete a nuestra comunidad y transforma tu bienestar desde casa con clases guiadas por instructores certificados.</textarea>
+                        </div>
+                    </div>
+                    <div class="config-card">
+                        <h3>👤 Sobre Mí</h3>
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" id="config-instructor-name" class="input-field" value="Tu Nombre">
+                        </div>
+                        <div class="form-group">
+                            <label>Biografía</label>
+                            <textarea id="config-instructor-bio" class="input-field" rows="4">Soy instructora certificada con más de 10 años de experiencia en Hatha, Vinyasa y Yoga Restaurativo. Mi misión es hacer el yoga accesible para todos.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Credenciales</label>
+                            <input type="text" id="config-instructor-credentials" class="input-field" value="RYT-500 Certified">
+                        </div>
+                    </div>
+                    <div class="config-card">
+                        <h3>📧 Contacto</h3>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="config-email" class="input-field" value="hola@academiadeyoga.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Instagram</label>
+                            <input type="url" id="config-instagram" class="input-field" placeholder="https://instagram.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label>YouTube</label>
+                            <input type="url" id="config-youtube" class="input-field" placeholder="https://youtube.com/...">
+                        </div>
+                    </div>
+                </div>
+                <div class="config-actions">
+                    <button class="btn btn-primary" onclick="saveConfig()">💾 Guardar Configuración</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal para Curso -->
+    <div class="modal-overlay" id="course-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Nuevo Curso</h3>
+                <button class="modal-close" onclick="closeCourseModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="course-form">
+                    <input type="hidden" id="course-id">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Título del Curso *</label>
+                            <input type="text" id="course-title" class="input-field" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nivel *</label>
+                            <select id="course-level" class="input-field" required>
+                                <option value="principiante">Principiante</option>
+                                <option value="intermedio">Intermedio</option>
+                                <option value="avanzado">Avanzado</option>
+                                <option value="todos">Todos los niveles</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Descripción *</label>
+                        <textarea id="course-description" class="input-field" rows="3" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Precio (USD) *</label>
+                            <input type="number" id="course-price" class="input-field" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Precio Original (tachado)</label>
+                            <input type="number" id="course-original-price" class="input-field" min="0">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Duración</label>
+                            <input type="text" id="course-duration" class="input-field" placeholder="Ej: 4 semanas">
+                        </div>
+                        <div class="form-group">
+                            <label>Número de Clases</label>
+                            <input type="number" id="course-lessons" class="input-field" min="1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>URL de Imagen</label>
+                        <input type="url" id="course-image" class="input-field" placeholder="https://...">
+                    </div>
+                    <div class="form-group">
+                        <label>URL de Hotmart</label>
+                        <input type="url" id="course-hotmart" class="input-field" placeholder="https://pay.hotmart.com/...">
+                    </div>
+                    <div class="form-group">
+                        <label>Estilo de Yoga</label>
+                        <select id="course-style" class="input-field">
+                            <option value="hatha">Hatha</option>
+                            <option value="vinyasa">Vinyasa</option>
+                            <option value="restaurativo">Restaurativo</option>
+                            <option value="meditacion">Meditación</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="course-featured"> Mostrar como destacado en home
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="course-active" checked> Curso activo (visible en web)
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeCourseModal()">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="saveCourse()">Guardar Curso</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message" id="toast-message">Guardado correctamente</span>
+    </div>
+
+    <!-- Import Modal -->
+    <input type="file" id="import-file" accept=".json" style="display: none;" onchange="handleImport(event)">
+
+    <script src="admin.js"></script>
+</body>
+</html>
