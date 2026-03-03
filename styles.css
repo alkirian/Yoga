@@ -13,7 +13,7 @@
   --color-secondary-light: #e5d9c3;
   --color-accent: #d4a574;
   --color-accent-cta: #d1603d; /* Terracota cálido para conversiones */
-  --color-header-bg: #2c3530; /* Oliva oscuro elegante */
+  --color-header-bg: #f4f0ea; /* Beige cálido elegante / Sand */
 
   --color-bg: #ffffff;
   --color-bg-alt: #f9f7f4;
@@ -259,14 +259,14 @@ ol {
 .logo-icon {
   width: 36px;
   height: 36px;
-  color: var(--color-accent); /* Logo resalta en dorado/arena */
+  color: var(--color-primary); /* Restaurado a verde para el fondo claro */
 }
 
 .logo-text {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 500;
-  color: white;
+  color: var(--color-text);
 }
 
 .nav-menu {
@@ -278,22 +278,22 @@ ol {
 .nav-link {
   font-size: 0.9375rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text);
   transition: color var(--transition-fast);
 }
 
 .nav-link:hover {
-  color: white;
+  color: var(--color-primary);
 }
 
 .header .btn-outline {
-  border-color: rgba(255, 255, 255, 0.3);
-  color: white;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .header .btn-outline:hover {
-  background: white;
-  color: var(--color-header-bg);
+  background: var(--color-primary);
+  color: white;
 }
 
 .nav-toggle {
@@ -309,10 +309,11 @@ ol {
 .nav-toggle span {
   width: 24px;
   height: 2px;
-  background: white;
+  background: var(--color-text);
   transition: all var(--transition-fast);
 }
 
+/* ========== Hero Section ========== */
 /* ========== Hero Section ========== */
 .hero {
   min-height: 100vh;
@@ -321,32 +322,24 @@ ol {
   padding-top: 72px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    var(--color-bg) 0%,
-    var(--color-bg-alt) 100%
-  );
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(122, 154, 126, 0.05) 0%,
-    rgba(200, 176, 140, 0.08) 100%
-  );
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  /* Overlay oscuro para lectura sobre imagen responsive */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(44, 53, 48, 0.65),
+      /* Tono oscuro a juego con cabecera verde */ rgba(44, 53, 48, 0.85)
+    ),
+    url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1920&q=80")
+      center/cover no-repeat;
+  text-align: center;
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
 }
@@ -357,28 +350,38 @@ ol {
   font-weight: 500;
   line-height: 1.15;
   margin-bottom: var(--space-lg);
+  color: white; /* Contraste máximo */
 }
 
 .hero-title .accent {
-  color: var(--color-primary);
+  color: var(--color-accent); /* Dorado/arena para resaltar */
 }
 
 .hero-subtitle {
   font-size: 1.125rem;
-  color: var(--color-text-light);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--space-xl);
-  max-width: 480px;
+  max-width: 600px;
 }
 
 .hero-cta {
   display: flex;
+  justify-content: center;
   gap: var(--space-md);
   flex-wrap: wrap;
   margin-bottom: var(--space-2xl);
 }
 
+.hero .btn-ghost {
+  color: white; /* Adaptacion para vista oscura */
+}
+.hero .btn-ghost:hover {
+  color: var(--color-accent);
+}
+
 .hero-stats {
   display: flex;
+  justify-content: center;
   gap: var(--space-2xl);
 }
 
@@ -394,39 +397,17 @@ ol {
   color: var(--color-primary);
 }
 
+.hero .stat-number {
+  color: var(--color-accent);
+}
+
 .stat-label {
   font-size: 0.875rem;
   color: var(--color-text-muted);
 }
 
-.hero-image {
-  display: flex;
-  justify-content: center;
-}
-
-.hero-image-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 450px;
-}
-
-.hero-image-wrapper::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 100%;
-  height: 100%;
-  background: var(--color-secondary-light);
-  border-radius: var(--radius-xl);
-  z-index: -1;
-}
-
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-xl);
-  object-fit: cover;
+.hero .stat-label {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ========== Trust Indicators (Escudo Hero) ========== */
@@ -850,30 +831,8 @@ ol {
 
 /* ========== Responsive ========== */
 @media (max-width: 1024px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-subtitle {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-cta {
-    justify-content: center;
-  }
-
-  .hero-stats {
-    justify-content: center;
-  }
-
-  .hero-image {
-    order: -1;
-  }
-
-  .hero-image-wrapper {
-    max-width: 350px;
+  .hero {
+    padding-top: 100px;
   }
 
   .about-grid {
@@ -945,11 +904,6 @@ ol {
 
   .hero-title {
     font-size: clamp(2rem, 8vw, 2.5rem);
-  }
-
-  /* Reduce space between Hero and Trust badges on mobile */
-  .hero-image-wrapper {
-    margin-bottom: var(--space-xl);
   }
 
   .hero-stats {
