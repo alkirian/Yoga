@@ -26,7 +26,7 @@
   --color-border-light: #f3f4f6;
 
   /* Typography */
-  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-heading: "Montserrat", "Inter", sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Spacing */
