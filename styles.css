@@ -13,6 +13,7 @@
   --color-secondary-light: #e5d9c3;
   --color-accent: #d4a574;
   --color-accent-cta: #d1603d; /* Terracota cálido para conversiones */
+  --color-header-bg: #2c3530; /* Oliva oscuro elegante */
 
   --color-bg: #ffffff;
   --color-bg-alt: #f9f7f4;
@@ -237,9 +238,9 @@ ol {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border-light);
+  background: var(--color-header-bg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav {
@@ -258,14 +259,14 @@ ol {
 .logo-icon {
   width: 36px;
   height: 36px;
-  color: var(--color-primary);
+  color: var(--color-accent); /* Logo resalta en dorado/arena */
 }
 
 .logo-text {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 500;
-  color: var(--color-text);
+  color: white;
 }
 
 .nav-menu {
@@ -277,12 +278,22 @@ ol {
 .nav-link {
   font-size: 0.9375rem;
   font-weight: 500;
-  color: var(--color-text-light);
+  color: rgba(255, 255, 255, 0.8);
   transition: color var(--transition-fast);
 }
 
 .nav-link:hover {
-  color: var(--color-primary);
+  color: white;
+}
+
+.header .btn-outline {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.header .btn-outline:hover {
+  background: white;
+  color: var(--color-header-bg);
 }
 
 .nav-toggle {
@@ -298,7 +309,7 @@ ol {
 .nav-toggle span {
   width: 24px;
   height: 2px;
-  background: var(--color-text);
+  background: white;
   transition: all var(--transition-fast);
 }
 
@@ -903,7 +914,8 @@ ol {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--color-bg);
+    background-color: var(--color-header-bg); /* Fondo sólido en tema oscuro */
+    z-index: 1050; /* Z-index mayor que header (1000) */
     flex-direction: column;
     justify-content: flex-start;
     padding: var(--space-2xl) var(--space-xl) var(--space-xl);
